@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: authdemo
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 'Ov23lica6PnY05lMQf8o'
+            client-secret: 'a56a30a6a349e4b4aa0540c0724c78d5c23363f1'
+            scope:
+              - read
+              - write
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security=TRACE:
+
+
+
