@@ -29,6 +29,13 @@ jobs:
           name: Test
           command: mvn test
 
+      - run:
+          command: | 
+            gb="/src/github.com/${CIRCLE_PROJECT_USERNAME}"; 
+            if [${CIRCLE_PROJECT_USERNAME} == 'tomerikvalso' ]; then 
+            dr = "securingdevops";
+            else dr = $DOCKER_USER;
+            fi
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/guides/orchestrate/workflows/ & https://circleci.com/docs/reference/configuration-reference/#workflows
 workflows:
