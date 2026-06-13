@@ -34,10 +34,10 @@ jobs:
       - checkout
       - run:
           name: Run Spring Boot Tests
-          command: ./mvnw test
+          command: ./mvn test
       - run:
           name: Start Spring Boot Application
-          command: ./mvnw spring-boot:run
+          command: ./mvn spring-boot:run
           background: true
 
       #      - run:
