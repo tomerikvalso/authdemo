@@ -14,13 +14,12 @@ jobs:
       # See: https://circleci.com/developer/images/image/cimg/openjdk
       - image: cimg/openjdk:26.0.1
 
-    # Add steps to the job
-    # See: https://circleci.com/docs/guides/orchestrate/jobs-steps/#steps-overview & https://circleci.com/docs/reference/configuration-reference/#steps
+  deploy:
+    docker:
+      - image: cimg/openjdk:26.0.1
+    working_directory: ~/repo
     steps:
-      # Checkout the code as the first step.
       - checkout
-
-      # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
@@ -32,6 +31,19 @@ jobs:
       - run:
           command: echo "Hello, world!"
           name: Build app
+
+#      - run:
+#          name: Create app
+#          command: chmod +x app.yaml.sh && ./app.yaml.sh > ./app.yaml
+
+      - run:
+          name: Set up GCloud
+          command: gcloud app deploy application.yaml
+    # Add steps to the job
+    # See: https://circleci.com/docs/guides/orchestrate/jobs-steps/#steps-overview & https://circleci.com/docs/reference/configuration-reference/#steps
+
+      # Use mvn clean and package as the standard maven build phase
+
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/guides/orchestrate/workflows/ & https://circleci.com/docs/reference/configuration-reference/#workflows
 workflows:
@@ -39,3 +51,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
+      - deploy
