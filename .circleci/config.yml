@@ -22,7 +22,7 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: mvn test
+          command: cd .. | mvn test
 
       - run:
           command: echo "Hello, world!"
