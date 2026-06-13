@@ -5,18 +5,6 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/guides/orchestrate/jobs-steps/#jobs-overview & https://circleci.com/docs/reference/configuration-reference/#jobs
 jobs:
-  build:
-    docker:
-      - image: cimg/openjdk:26.0.1
-    steps:
-      - checkout
-      - run:
-          name: Run Spring Boot Tests
-          command: ./mvnw test
-      - run:
-          name: Start Spring Boot Application
-          command: ./mvnw spring-boot:run
-          background: true
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
@@ -39,8 +27,20 @@ jobs:
       - run:
           command: echo "Hello, world!"
           name: Build app
+  buildlate:
+    docker:
+      - image: cimg/openjdk:26.0.1
+    steps:
+      - checkout
+      - run:
+          name: Run Spring Boot Tests
+          command: ./mvnw test
+      - run:
+          name: Start Spring Boot Application
+          command: ./mvnw spring-boot:run
+          background: true
 
-#      - run:
+      #      - run:
 #          name: Create app
 #          command: chmod +x app.yaml.sh && ./app.yaml.sh > ./app.yaml
 
@@ -54,3 +54,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
+      - buildlate
