@@ -55,9 +55,6 @@ workflows:
       - test:
           name: test
           filters:
-            branches:
-              only:
-                - circleci-proejct-setup
 
       - deploy:
           name: deploy-staging
