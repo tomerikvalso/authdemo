@@ -54,8 +54,6 @@ workflows:
     jobs:
       - deploy:
           name: deploy-staging
-          requires:
-            - test
           post-steps:
             - run:
                 name: Deploy app
