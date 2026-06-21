@@ -64,8 +64,6 @@ workflows:
       - deploy:
           name: deploy-prod
           context: "Covalence CircleCI"
-          requires:
-            - test
           post-steps:
             - run:
                 name: Deploy app
