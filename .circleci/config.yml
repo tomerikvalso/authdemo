@@ -52,10 +52,6 @@ jobs:
 workflows:
   deploy:
     jobs:
-      - test:
-          name: test
-          filters:
-
       - deploy:
           name: deploy-staging
           requires:
