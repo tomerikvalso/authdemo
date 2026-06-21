@@ -30,7 +30,7 @@ jobs:
           command: echo "Hello, world!"
           name: Build app
 
-  deployjob:
+  deploy-staging:
     docker:
       - image: google/cloud-sdk
     working_directory: ~/repo
