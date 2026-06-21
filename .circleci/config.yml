@@ -60,13 +60,13 @@ workflows:
   sample:
     jobs:
       - build-and-test
-      - deploy:
+      - deploy1:
           name: deploy-staging
           post-steps:
             - run:
                 name: Deploy app
                 command: gcloud app deploy app.yaml
-      - deploy:
+      - deploy2:
           name: deploy-prod
           context: "Covalence CircleCI"
           post-steps:
