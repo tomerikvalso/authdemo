@@ -91,7 +91,7 @@ workflows:
           context: "Covalence CircleCI"
           post-steps:
             - run:
-                name: Migrate traffic
+                name: Migrate traffic2
                 command: gcloud app services set-traffic ${GCLOUD_APP_SERVICE} --splits=$(gcloud app versions list --sort-by="~last_deployed_time" --limit=1 --format="value(id)")=1
             - run:
                 name: Stop previous version version
