@@ -37,7 +37,7 @@ jobs:
   test:
     executor:
       name: node/default
-      tag: '26.4.0'
+      tag: '24.12.0'
     steps:
       - checkout
       - run:
