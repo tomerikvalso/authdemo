@@ -1,6 +1,6 @@
 #!/bin/bash
 echo """
-runtime: nodejs
+runtime: nodejs20
 env: flex
 service: $GCLOUD_APP_SERVICE
 resources:
