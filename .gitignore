@@ -34,4 +34,3 @@ build/
 
 ### NODE stuff ###
 /node_modules/
-/public/js/app.js
