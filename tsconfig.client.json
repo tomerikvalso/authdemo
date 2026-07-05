@@ -9,7 +9,8 @@
       "allowSyntheticDefaultImports": true,
       "lib":[
           "es2015", "dom"
-      ]
+      ],
+      "ignoreDeprecations": "6.0"
     },
     "include": [
         "src/client/**/*"
