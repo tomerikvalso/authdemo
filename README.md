@@ -18,7 +18,7 @@
 ## 🧠 Purpose
 
 This project is a starting point for a TypeScript based React app that also has a local API server using Express. It serves as an excellent "sandbox" for learning the workflow of a full stack web application from our Bootcamp. There is no connection to any kind of database, but our videos and course cover MySQL and its integration into Node and Express.
-
+        
 Keep in mind there isn't much quality of life in this Boilerplate code, you'll miss your "hot reloading" feature of Create React App, the ability to import pictures as modules, and all the other fun stuff the big frameworks have already coded for you. They're all still accessible, but you'd have to learn to add them yourself! Feel free to ping me (`@Cool Hand Luke`) in our Discord channel if you're a student and are interested in a particular feature you'd like to see a tutorial on. 😎
 
 &nbsp;
