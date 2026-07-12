@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Create app.yaml
+          name: Create2 app.yaml
           command: chmod +x app.yaml.sh && ./app.yaml.sh > ./app.yaml
       - run:
           name: Set up GCloud
