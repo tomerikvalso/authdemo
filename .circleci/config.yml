@@ -4,7 +4,8 @@ version: 2.1
 # Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
 # See: https://circleci.com/docs/2.0/orb-intro/
 orbs:
-  node: circleci/node@5.0.3
+  node: circleci/node@7.2.1
+
 
 # Jobs
 jobs:
@@ -37,7 +38,7 @@ jobs:
   test:
     executor:
       name: node/default
-      tag: '16.17.1'
+      tag: '24.12.0'
     steps:
       - checkout
       - run:
@@ -91,7 +92,7 @@ workflows:
           context: "Covalence CircleCI"
           post-steps:
             - run:
-                name: Migrate traffic
+                name: Migrate traffic2
                 command: gcloud app services set-traffic ${GCLOUD_APP_SERVICE} --splits=$(gcloud app versions list --sort-by="~last_deployed_time" --limit=1 --format="value(id)")=1
             - run:
                 name: Stop previous version version

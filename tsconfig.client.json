@@ -4,12 +4,13 @@
       "noImplicitAny": true,
       "module": "es6",
       "moduleResolution": "node",
-      "target": "es5",
+      "target": "ES2015",
       "jsx": "react",
       "allowSyntheticDefaultImports": true,
       "lib":[
           "es2015", "dom"
-      ]
+      ],
+      "ignoreDeprecations": "6.0"
     },
     "include": [
         "src/client/**/*"
